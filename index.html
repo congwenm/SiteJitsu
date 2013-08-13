@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <!--<link rel="stylesheet" href="./css/base.css" />-->
+    <!--<link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css" />-->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/app-ui.css" />
+    <link rel="stylesheet" href="./css/testApp.css" />
+
+    <script type="text/javascript" src="./lib/jquery.js"></script>
+    <script type="text/javascript" src="./lib/angular-15.js"></script>
+</head>
+<body id="mySite" class="mySite left">
+
+    <div id="headerWrap" class="design1">
+        <div id="logo">
+            <span class="logoImg"></span>
+            <span class="title">SITE<span class="titleEmphasis">JITSU</span></span>
+        </div>
+
+        <div id="menuBar" menu-bar>
+            <ul>
+                <li ng-ref="/home" ng:class="{active: activePage == 'HOME'}">
+                    <span >Home</span></li>
+                <li ng-ref="/aboutUs" ng:class="{active: activePage == 'ABOUT US'}">
+                    <span>About Us</span></li>
+                <li ng-ref="/contact" ng:class="{active: activePage == 'CONTACT'}">
+                    <span>Contact</span></li>
+                <li ng-ref="/demo" ng:class="{active: activePage == 'DEMO'}" class="hide">
+                    <span>Demo</span></li>
+                <li ng-ref="/toolbox" ng:class="{active: activePage == 'TOOL BOX'}">
+                    <span>Tool Box</span></li>
+                <li ng-ref="/animation" ng:class="{active: activePage == 'ANIMATION'}">
+                    <span>Animation</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <style>
+
+    </style>
+    <div id="contentWrap" class="left inline design2">
+        <!--<div ng-repeat="loop in looper">content<br></div>-->
+        <p class="title">{{activePage}} {{activeModule}} </p>
+
+        <hr class="frame"/>
+        <ng-view class=""></ng-view>
+
+        <div sticky-bottom ng:show="false">
+            <button>Do this</button>
+        </div>
+    </div>
+
+
+
+    <div id="modal_wrapper" class="hide">
+        <div id="modal_overlay"></div>
+        <div id="modal_content"></div>
+    </div>
+
+</body>
+<script>
+    angular.element(document).ready(function(){
+        angular.bootstrap($('#mySite'), ['mySite']);
+    })
+</script>
+
+<script src="js/util.js"></script>
+<script src="js/mySiteInit.js"></script>
+
+<script src="js/s-site.js"></script>
+<script src="js/c-site.js"></script>
+<script src="js/d-site.js"></script>
+<script src="js/d-ui-site.js"></script>
+
+</html>

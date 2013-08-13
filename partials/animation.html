@@ -1,0 +1,51 @@
+<div>
+    <div class="hr-nav" ng-init="activeModule = 'dice'">
+        <ul>
+            <!--<li ng-click="activeModule = 'rubiks'"
+                ng:class="{active: activeModule == 'rubiks'}">Rubik's Cube</li>-->
+            <li ng-click="activeModule = 'dice'"
+                ng:class="{active: activeModule == 'dice'}">Dice</li>
+            <!--<li></li>-->
+        </ul>
+    </div>
+    <div ng-switch on="activeModule">
+        <div ng-switch-when="dice" class="dice">
+
+            <style>
+
+            </style>
+            <script>
+
+            </script>
+            <p>Press A, W, S, D</p>
+            <hr>
+            <div class="dice" ng-dice>
+                <div id="experiment">
+                    <div id="cube">
+                        <div class="face one">
+                            <p>1</p>
+                        </div>
+                        <div class="face two">
+                            <p>2</p>
+                        </div>
+                        <div class="face three">
+                            <p>3</p>
+                        </div>
+                        <div class="face four">
+                            <p>4</p>
+                        </div>
+                        <div class="face five">
+                            <p>5</p>
+                        </div>
+                        <div class="face six">
+                            <p>6</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,58 @@
+<div>
+    <div class="hr-nav" ng-init="activeModule = 'zoomPad'">
+        <ul>
+            <li ng-click="activeModule = 'modal'"
+                ng:class="{active: activeModule == 'modal'}">Modal</li>
+            <li ng-click="activeModule = 'zoomPad'"
+                    ng:class="{active: activeModule == 'zoomPad'}">Zoom Pad</li>
+            <!--<li ng-click="activeModule = 'rubiks'"
+                ng:class="{active: activeModule == 'rubiks'}">Rubik's Cube</li>-->
+        </ul>
+    </div>
+
+    <div> <!-- ng-switch on="activeModule"-->
+        <div ng-show="activeModule == 'zoomPad'" class="zoomPad"><!--ng-switch-when="zoomPad"-->
+            <h3>Hover Over Me</h3>
+            <zoom-pad src = "./assets/img/watch.jpg" zoom="100" pup=".productZoomPup" class="left">
+            </zoom-pad>
+            <div class="productZoomPup" class="left" style="margin-left: 5px;">
+            </div>
+        </div>
+
+        <div ng-controller="modalCtrl"
+                ng-show="activeModule == 'modal'" class="modal" >
+            <h3>Click to Go Back</h3>
+            <button modal-a modal-query=".modalDemoContent">&lt;&lt;Back</button>
+            <style>
+                button[modal-a]{
+                    margin-left: 20px;
+                    padding: 8px;
+                }
+            </style>
+
+        </div>
+    </div>
+    <style>
+        #modal_wrapper.show #modal_content{
+            border: 1px black solid;
+            margin: auto;
+            margin-top: 100px;
+            width: 350px;
+            height: 100px;
+            padding: 20px;
+        }
+        #modal_content .modalDemoContent div{
+            text-align: center;
+        }
+        #modal_content button{
+            padding: 5px 15px;
+        }
+        #modal_content button:hover{
+            background-color: #444444;
+            color: #dddddd;
+            font-weight: bold;
+            padding: 5px 14px;
+        }
+
+    </style>
+</div>

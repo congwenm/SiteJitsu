@@ -1,0 +1,190 @@
+#modal_wrapper{
+    opacity: 0;
+}
+#modal_wrapper.show{
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5 ease;
+}
+#modal_overlay{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 200%;
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.5);
+    transition: opacity 0.5 ease;
+    /*text-align: center;*/
+}
+#modal_content{
+
+}
+#modal_wrapper.show #modal_content{
+    z-index: 1001;
+    position: relative;
+    margin: 40px auto 0px auto;
+    width: 50%;
+    height: 80%;
+    background-color: rgba(255,255,255,1);
+    -webkit-transition-property: top, bottom;
+    vertical-align: middle;
+}
+
+
+/*Spinner*/
+#spinner {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -100px;
+    height: 100px;
+    width: 100px;
+    text-indent: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-mask-image: url(../res/effect/spinner-2.png);
+    background-color: #000;
+    -webkit-animation-name: spinnerRotate;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes spinnerRotate {
+	from {
+		-webkit-transform:rotate(0deg);
+	}
+	to {
+		-webkit-transform:rotate(360deg);
+	}
+}
+
+
+
+
+
+
+
+
+/*ZoomPad*/
+zoom-pad, zoom-pad div{
+    position: relative;
+    cursor: crosshair;
+    overflow: hidden;
+}
+.zoomPad{
+    position: relative;
+}
+zoom-pad div{
+    display: inline-block;
+}
+img.zoomPad_img{
+    width: 300px;
+    max-height: 300px;
+    height: auto;
+    border: 1px black solid;
+    /*margin-right: 10px;*/
+}
+div.zoomScope{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0px;
+    left: 0px;
+    border-width: 2px;
+      /*zoomPup*/
+    overflow: hidden;
+    background-color: #000;
+    opacity: 0.4;
+    z-index: 21;
+    cursor: crosshair;
+    filter: alpha(opacity = 60);
+}
+div.zoomPup{
+    display: inline-block;
+    /*background: url('./res/gucci/sukey-tote.jpg') no-repeat 0px 0px;*/
+    background-size: 1200px;
+    width: 300px;
+    height: 300px;
+    z-index: 20;
+    border: 1px black ridge;
+    transition: display 0.5s ease;
+}
+/*Zoom Pad*/
+
+
+
+
+
+/*3D Transform*/
+/*Rubiks Cube*/
+/*Dice*/
+
+#experiment{
+    -webkit-perspective: 2000;
+    -webkit-perspective-origin: 100% 500%;
+}
+#cube{
+    position: relative;
+    margin: 100px auto auto 100px;
+    height: 100px;
+    width: 100px;
+    /*background-color: yellow;*/
+
+    -webkit-transition: -webkit-transform 1s linear;
+    -webkit-transform-style: preserve-3d;
+}
+.face{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    padding: 0px;
+    background-color: rgba(50,50,50,0.75);
+    font-size: 27px;
+    line-height: 1em;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: black;
+}
+#cube .one {
+    -webkit-transform: rotateX(90deg) translateZ(50px);
+}
+#cube .two {
+    -webkit-transform: translateZ(50px);
+}
+#cube .three {
+    -webkit-transform: rotateY(90deg) translateZ(50px);
+}
+#cube .four {
+    -webkit-transform: rotateY(180deg) translateZ(50px);
+}
+#cube .five {
+    -webkit-transform: rotateY(-90deg) translateZ(50px);
+}
+#cube .six {
+    -webkit-transform: rotateX(-90deg) translateZ(50px) rotate(180deg);
+}
+#cube .face{
+    text-align: center;
+    vertical-align: middle;
+}
+#cube .face p{
+    font-size: 2.5em;
+    margin: 0;
+    top: 35px;
+    position: relative;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+<div ng-controller="homeCtrl">
+
+    <p id="spinner">Please wait while we do what we do best.</p>
+
+	<!-- Directive: Create a PullDown Box of the current time and location -->
+	<div wei-zhi class="weiZhiWrapper">
+		<div class="weizhi btn">Location</div>
+		<ul class="locator untoggled" ng-model="locator">
+			<li ng-repeat="item in locator">{{item}}</li>
+		</ul>
+		</ul>
+	</div>
+</div>
