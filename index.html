@@ -12,32 +12,32 @@
     <script type="text/javascript" src="./lib/angular-15.js"></script>
 </head>
 <body id="mySite" class="mySite left">
+    <style></style>
+        <div id="headerWrap" class="design1">
+            <div id="logo">
+                <span class="logoImg"></span>
+                <span class="title">SITE<span class="titleEmphasis">JITSU</span></span>
+            </div>
 
-    <div id="headerWrap" class="design1">
-        <div id="logo">
-            <span class="logoImg"></span>
-            <span class="title">SITE<span class="titleEmphasis">JITSU</span></span>
+            <div id="menuBar" menu-bar>
+                <ul>
+                    <li ng-ref="/home" ng:class="{active: activePage == 'HOME'}">
+                        <span >Home</span></li>
+                    <li ng-ref="/aboutUs" ng:class="{active: activePage == 'ABOUT US'}">
+                        <span>About Us</span></li>
+                    <li ng-ref="/contact" ng:class="{active: activePage == 'CONTACT'}">
+                        <span>Contact</span></li>
+                    <li ng-ref="/demo" ng:class="{active: activePage == 'DEMO'}" class="hide">
+                        <span>Demo</span></li>
+                    <li ng-ref="/toolbox" ng:class="{active: activePage == 'TOOL BOX'}">
+                        <span>Tool Box</span></li>
+                    <li ng-ref="/animation" ng:class="{active: activePage == 'ANIMATION'}">
+                        <span>Animation</span>
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <div id="menuBar" menu-bar>
-            <ul>
-                <li ng-ref="/home" ng:class="{active: activePage == 'HOME'}">
-                    <span >Home</span></li>
-                <li ng-ref="/aboutUs" ng:class="{active: activePage == 'ABOUT US'}">
-                    <span>About Us</span></li>
-                <li ng-ref="/contact" ng:class="{active: activePage == 'CONTACT'}">
-                    <span>Contact</span></li>
-                <li ng-ref="/demo" ng:class="{active: activePage == 'DEMO'}" class="hide">
-                    <span>Demo</span></li>
-                <li ng-ref="/toolbox" ng:class="{active: activePage == 'TOOL BOX'}">
-                    <span>Tool Box</span></li>
-                <li ng-ref="/animation" ng:class="{active: activePage == 'ANIMATION'}">
-                    <span>Animation</span>
-                </li>
-            </ul>
-        </div>
-
-    </div>
 
 
     <style>
@@ -78,3 +78,4 @@
 <script src="js/d-ui-site.js"></script>
 
 </html>
+

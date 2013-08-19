@@ -196,3 +196,45 @@ app.directive('ngDice', function(){
        $(document).keyup(rotateEvent);
    }
 })
+
+
+app.directive('shuffleBlocks', function($timeout){
+
+    return {
+        link: function(sco,ele,att){
+            deba.push(sco,ele,att)
+            var type = att.type,
+                contents = ele.children('div'),
+                selected = contents.first(),
+                index = 0;
+
+            /*initialize*/
+            $(contents).not(selected).addClass('curtainDown')
+
+            function calcNext(){
+                index++;
+                selected = $(contents[index%(contents).length]).css('z-index', '0').removeClass('curtainDown');
+                console.log(selected);
+
+                contents.not(selected).css('z-index', '-1');
+                $timeout(function(){
+                    contents.not(selected).addClass('curtainDown');
+                }, 2000);
+
+            }
+            /*Trigger fuction*/
+            function triggerEvent(){
+//                alert('triggered');
+                calcNext();
+            }
+            ele.bind('click', triggerEvent);
+
+            /*Timeout*/
+            /*$timeout(function(){
+                triggerEvent();
+
+
+            }, 1500)*/
+        }
+    }
+})

@@ -1,13 +1,63 @@
 <div ng-controller="homeCtrl">
+    <style>
+        #homeWrap{
+            background-color: lawngreen;
+            width: 100%;
+            height:100%;
+        }
+        [shuffle-blocks]{
+            display: inline-block;
+            position: relative;
+            border: 4px solid rgba(100,100,100,0);
+            overflow: hidden;
+        }
+        [shuffle-blocks]:hover{
+            border: 4px solid rgba(100,100,100,0.4);
+        }
 
-    <p id="spinner">Please wait while we do what we do best.</p>
+        [shuffle-blocks] > div{
+            position: absolute;
+            transition: all 2s ease-out;
+            -webkit-transition: auto;
+            -moz-transition: auto;
+        }
+        [shuffle-blocks]  > div.curtainDown{
+            top: 150px;
+            transition: all 2s ease-out;
+            -webkit-transition: all 2s ease-out;
+            -moz-transition: all 2s ease-out;
+            /*z-index: -1;*/
+            /*display: none;*/
+        }
 
-	<!-- Directive: Create a PullDown Box of the current time and location -->
-	<div wei-zhi class="weiZhiWrapper">
-		<div class="weizhi btn">Location</div>
-		<ul class="locator untoggled" ng-model="locator">
-			<li ng-repeat="item in locator">{{item}}</li>
-		</ul>
-		</ul>
-	</div>
+        [shuffle-blocks][type="1"],
+        [shuffle-blocks][type="1"] img{
+            width: 150px;
+            height: 150px;
+        }
+
+        [shuffle-blocks][type="2"],
+        [shuffle-blocks][type="2"] img{
+            width: 312px;
+            height: 150px;
+        }
+
+
+    </style>
+    <!--<p id="spinner">Please wait while we do what we do best.</p>-->
+    <div id="homeWrap">
+        <!--<img src="./assets/img/wemake.jpg">-->
+        <div shuffle-blocks type="1"> <!--Type 1 = cube-->
+            <div><img ng-src="./assets/img/wemake.jpg"/></div>
+        </div>
+        <div shuffle-blocks type="1">
+            <div><img ng-src="./assets/img/webcraft.jpg"/></div>
+        </div>
+        <br>
+        <div shuffle-blocks type="2">
+            <div><img ng-src="./assets/img/www.jpg"></div>
+            <div><img ng-src="./assets/img/rhino.jpg"></div>
+        </div>
+    </div>
+
 </div>
