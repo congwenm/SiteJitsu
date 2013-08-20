@@ -204,37 +204,29 @@ app.directive('shuffleBlocks', function($timeout){
         link: function(sco,ele,att){
             deba.push(sco,ele,att)
             var type = att.type,
-                contents = ele.children('div'),
-                selected = contents.first(),
-                index = 0;
-
-            /*initialize*/
-            $(contents).not(selected).addClass('curtainDown')
-
-            function calcNext(){
-                index++;
-                selected = $(contents[index%(contents).length]).css('z-index', '0').removeClass('curtainDown');
-                console.log(selected);
-
-                contents.not(selected).css('z-index', '-1');
-                $timeout(function(){
-                    contents.not(selected).addClass('curtainDown');
-                }, 2000);
-
-            }
+                shufflePane = ele.children('.shuffle-pane'),
+                contents = shufflePane.children('div'),
+                index = 0, sizeRatio = 154,//determine the margin-top value of shuffle-pane
+                itemCnt = contents.length,
+                mode = 'down'; //inverse gets up
+            if (itemCnt <= 1) return;
             /*Trigger fuction*/
             function triggerEvent(){
 //                alert('triggered');
-                calcNext();
+                switch(mode){
+                    case 'up':
+                        if (--index == 0) mode = 'down';
+                        break;
+                    case 'down':
+                        if (++index >= itemCnt-1) mode = 'up';
+                        break;
+                }
+                console.log('new margin-top' + -index * sizeRatio + 'px');
+                shufflePane.css('margin-top', -index * sizeRatio + 'px');
             }
-            ele.bind('click', triggerEvent);
-
+//            ele.bind('click', triggerEvent);
             /*Timeout*/
-            /*$timeout(function(){
-                triggerEvent();
-
-
-            }, 1500)*/
+            setInterval(triggerEvent, 5000);
         }
     }
 })
