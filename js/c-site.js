@@ -1,6 +1,6 @@
 
 function homeCtrl($scope, $rootScope){
-    $rootScope.activeModule = '-- (Win 8 Theme, Incomplete)';
+    
 }
 
 function aboutUsCtrl($scope){

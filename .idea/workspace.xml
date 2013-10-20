@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ec9830cd-55a7-43ce-b080-4ce8322f9a62" name="Default" comment="" />
+    <list default="true" id="ec9830cd-55a7-43ce-b080-4ce8322f9a62" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/c-site.js" afterPath="$PROJECT_DIR$/js/c-site.js" />
+    </list>
     <ignored path="mySite.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,7 +26,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="14" selection-start="1755" selection-end="1755" vertical-scroll-proportion="-12.666667">
+            <state line="38" column="14" selection-start="1755" selection-end="1755" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -32,7 +35,7 @@
       <file leaf-file-name="aboutUs.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/partials/aboutUs.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="30" selection-start="302" selection-end="302" vertical-scroll-proportion="-3.8431373">
+            <state line="13" column="30" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -41,16 +44,16 @@
       <file leaf-file-name="c-site.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/c-site.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="303" selection-end="303" vertical-scroll-proportion="-15.64">
+            <state line="26" column="92" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/partials/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="14" selection-start="3348" selection-end="3348" vertical-scroll-proportion="1.3421053">
+            <state line="49" column="57" selection-start="1211" selection-end="1211" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -59,8 +62,20 @@
       <file leaf-file-name="d-ui-site.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/d-ui-site.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="218" column="30" selection-start="7591" selection-end="7591" vertical-scroll-proportion="0.0">
+            <state line="168" column="55" selection-start="6041" selection-end="6041" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="angular.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/angular/angular.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12158" column="20" selection-start="396945" selection-end="396961" vertical-scroll-proportion="0.40636042">
+              <folding>
+                <marker date="1376928924506" expanded="true" signature="476176:476191" placeholder="{...}" />
+                <marker date="1376928924506" expanded="true" signature="476200:476216" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,14 +118,15 @@
         <option value="$PROJECT_DIR$/js/d-ui-site.js" />
         <option value="$PROJECT_DIR$/partials/aboutUs.html" />
         <option value="$PROJECT_DIR$/partials/home.html" />
+        <option value="$PROJECT_DIR$/lib/angular/angular.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="54" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1320" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -195,6 +211,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mySite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mySite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -253,8 +287,9 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../swordfish_dev" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager">
     <list size="0" />
@@ -287,13 +322,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3529412" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35234374" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -364,10 +399,17 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="1219" />
+      <option name="time" value="1239" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="118" column="35" selection-start="3373" selection-end="3373" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="18" selection-start="782" selection-end="782" vertical-scroll-proportion="0.0">
@@ -429,38 +471,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/d-ui-site.js">
+    <entry file="file://$PROJECT_DIR$/partials/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="218" column="30" selection-start="7591" selection-end="7591" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/partials/aboutUs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="30" selection-start="302" selection-end="302" vertical-scroll-proportion="-3.8431373">
+        <state line="49" column="57" selection-start="1211" selection-end="1211" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="14" selection-start="1755" selection-end="1755" vertical-scroll-proportion="-12.666667">
+        <state line="38" column="14" selection-start="1755" selection-end="1755" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/aboutUs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="30" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/c-site.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="303" selection-end="303" vertical-scroll-proportion="-15.64">
+        <state line="26" column="92" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/partials/home.html">
+    <entry file="file://$PROJECT_DIR$/js/d-ui-site.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="14" selection-start="3348" selection-end="3348" vertical-scroll-proportion="1.3421053">
+        <state line="168" column="55" selection-start="6041" selection-end="6041" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/angular/angular.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12158" column="20" selection-start="396945" selection-end="396961" vertical-scroll-proportion="0.40636042">
+          <folding>
+            <marker date="1376928924506" expanded="true" signature="476176:476191" placeholder="{...}" />
+            <marker date="1376928924506" expanded="true" signature="476200:476216" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
