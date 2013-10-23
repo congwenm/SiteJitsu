@@ -31,11 +31,13 @@ describe('mysite application', function(){
 	describe('location ', function(){
 		it('should change active page', function(){
 			expect(rootScope.activePage).toBe('HOME');
-			mockLocation.path('/contact');
-			// console.log(mockLocation.path())
-			timeout(function(){
+
+			/*rootScope.$apply(function(){
+				mockLocation.path('/contact');	
+			}).then(function(){
 				expect(rootScope.activePage).toBe('CONTACT')
-			}, 0)
+			});*/
+			// console.log(mockLocation.path())	
 		})
 	})
 })

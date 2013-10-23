@@ -202,7 +202,7 @@ app.directive('shuffleBlocks', function($timeout){
 
     return {
         link: function(sco,ele,att){
-            deba.push(sco,ele,att)
+            // deba.push(sco,ele,att)
             var type = att.type,
                 shufflePane = ele.children('.shuffle-pane'),
                 contents = shufflePane.children('div'),

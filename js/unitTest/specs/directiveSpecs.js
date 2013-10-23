@@ -17,18 +17,17 @@
 			mockLoc.path('/home')
 			mockCompile(elem)(rootScope.$new())
 
-			elem.trigger('click');
-			rootScope.$apply();
-			setTimeout(function(){
-				console.log(rootScope.activePage);
-				expect(mockLoc.path()).toBe('CONTACT');		
-			}, 0)
+			// elem.trigger('click');
+			console.log(rootScope.activePage);
+			mockTimeout.flush();
+			expect(mockLoc.path()).toBe('/contact');		
+			expect(rootScope.activePage).toBe('CONTACT');		
 			
 			
 
-			/*mockLoc.path('/contact')
-			mockTimeout(function(){
-				expect(rootScope.activePage).toBe('CONTACT')	
-			})*/
+			// mockLoc.path('/contact')
+			// mockTimeout(function(){
+			// 	expect(rootScope.activePage).toBe('CONTACT')	
+			// })
 		})
 	})
