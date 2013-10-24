@@ -1,6 +1,6 @@
 
 function homeCtrl($scope, $rootScope){
-    
+    $scope.testVar = 'test var home';
 }
 
 function aboutUsCtrl($scope){
