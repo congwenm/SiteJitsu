@@ -55,7 +55,5 @@ app.run(function($rootScope, $location){
 //        console.log(currentPage, nextPage);
         $rootScope.activePage = nextPage.$$route.routeTitle;
     })
-
-
 })
 

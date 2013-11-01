@@ -8,7 +8,7 @@
 
 app.directive('ngRef', function($location, $timeout){
     linkFn = function(sco,ele,att){
-        ele.bind('click', function(){
+        ele.on('click', function(){
 //            console.log($location);
             $timeout(function(){
                 $location.path(att.ngRef);
