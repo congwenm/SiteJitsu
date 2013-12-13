@@ -1,4 +1,5 @@
 app.factory('LoginService', function($resource){
-	// return $resource('../service/login');
-	return $resource('../../../Php/MyWebSite/Login')
+	//mock
+	// return $resource('../../../Php/MyWebSite/Login.php')
+	return $resource('Login.php');
 });

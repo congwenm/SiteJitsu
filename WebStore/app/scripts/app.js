@@ -23,8 +23,14 @@ var app = angular.module('WebStoreApp', ['ngRoute', 'ngResource'])
       ;
   })
   .run(function($rootScope){
-    $rootScope.status = {
-      LoggedIn: false
+    $rootScope.Status = {
+      LoggedIn: false,
+      Profile: {
+        email: '',
+        password: '',
+        username: '',
+        firstname: ''
+      }
     }
   })
   ;
