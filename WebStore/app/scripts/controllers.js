@@ -17,6 +17,7 @@ app.controller('HomeCtrl', function($scope){
 })
 
 .controller('LoginCtrl', function($scope, $rootScope, LoginService){
+	
 	$scope.login = function(e){
 		console.log($scope);
 		$scope.loginForm.submitten = true;
@@ -30,13 +31,15 @@ app.controller('HomeCtrl', function($scope){
 	
 
 		//login on valid form
-		if($scope.loginForm.$valid){
+		if($scope.loginForm.$valid = true){
 			LoginService.get({
 				'user_email': $scope.loginForm.email.$viewValue,
 				'user_password': $scope.loginForm.password.$viewValue
 			}, function(response){
 				console.log('logged in??', response);
 				$rootScope.LoginResponse = response;
+
+
 			})// send in username and password
 		}
 		else{

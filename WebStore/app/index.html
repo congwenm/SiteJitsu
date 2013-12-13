@@ -27,7 +27,7 @@
 
       <div ng-controller="LoginCtrl" >
 
-        <div ng-include="'views/login-form.html'" login-ui ng-if="!Status.LoggedIn" id ="login-banner"></div>
+        <div ng-clean="views/login-form.html" login-ui ng-if="!Status.LoggedIn" id ="login-banner"></div>
         <div ng-include="'views/loggedInHeader.html'" id="loggedIn-banner" ng-if="Status.LoggedIn"></div>
 
       </div>
