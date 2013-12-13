@@ -211,8 +211,9 @@ app.directive('shuffleBlocks', function($timeout){
                 mode = 'down'; //inverse gets up
             if (itemCnt <= 1) return;
             /*Trigger fuction*/
-            function triggerEvent(){
-//                alert('triggered');
+            shufflePane.css('margin-top', 'auto');
+            sco.triggerEvent = function(){
+//              alert('triggered');
                 switch(mode){
                     case 'up':
                         if (--index == 0) mode = 'down';
@@ -221,12 +222,15 @@ app.directive('shuffleBlocks', function($timeout){
                         if (++index >= itemCnt-1) mode = 'up';
                         break;
                 }
-                console.log('new margin-top' + -index * sizeRatio + 'px');
-                shufflePane.css('margin-top', -index * sizeRatio + 'px');
+                // console.log('new margin-top: ', -index * sizeRatio + 'px');
+                sco.currentMarginTop = (-index * sizeRatio) + 'px';
+                shufflePane.css('margin-top', sco.currentMarginTop);
+
+                return  sco.currentMarginTop;
             }
 //            ele.bind('click', triggerEvent);
             /*Timeout*/
-            setInterval(triggerEvent, 5000);
+            setInterval(sco.triggerEvent, 5000);
         }
     }
 })

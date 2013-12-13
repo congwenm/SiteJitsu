@@ -24,7 +24,7 @@
 			scope.$apply();
 			mockTimeout.flush();
 
-			console.log(rootScope.activePage);
+			// console.log(rootScope.activePage);
 
 			expect(mockLoc.path()).toBe('/contact');		
 			// expect(rootScope.activePage).toBe('CONTACT');		
