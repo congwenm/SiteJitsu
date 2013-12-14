@@ -10,8 +10,11 @@
   });
 
 
-app.controller('HomeCtrl', function($scope){
-
+app.controller('HomeCtrl', function($scope, $rootScope, Product){
+	$rootScope.items = Product.query();
+	$scope.checkItems = function(){
+		console.log($rootScope.items);
+	}
 
 
 })
@@ -21,29 +24,30 @@ app.controller('HomeCtrl', function($scope){
 	$scope.login = function(e){
 		console.log($scope);
 		$scope.loginForm.submitten = true;
-		e.stopPropagation();
+		// e.stopPropagation();
 		
-		$(window).click(function(){
-			$rootScope.$apply(function(){
-				$scope.loginForm.submitten = false;
-			})
+
+		$rootScope.onAction(function(){		
+			$scope.loginForm.submitten = false;	
 		})
-	
+		$scope.loginForm.$valid = true;
+		
 
 		//login on valid form
-		if($scope.loginForm.$valid = true){
+		if($scope.loginForm.$valid == true){
 			LoginService.get({
 				'user_email': $scope.loginForm.email.$viewValue,
 				'user_password': $scope.loginForm.password.$viewValue
 			}, function(response){
 				console.log('logged in??', response);
 				$rootScope.LoginResponse = response;
-
-
+				$rootScope.Status.Profile.firstname = response.MockLoginResponse.firstname;
+				$rootScope.Status.loggedIn = true;
 			})// send in username and password
 		}
 		else{
 			//do not log in
+			greenlog('checking which input field has an error');
 			if ($scope.loginForm.email.$invalid){
 				$scope.loginMsg = "Please Check your email";
 			}
@@ -51,5 +55,8 @@ app.controller('HomeCtrl', function($scope){
 				$scope.loginMsg = "Please Check your password";
 			}
 		}
+	}
+	$scope.logout = function(){
+		$rootScope.Status.reset();
 	}
 })

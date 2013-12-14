@@ -1,15 +1,12 @@
 <?php 
 //mock
-var mockLoginResponse = (object)array(
+$mockLoginResponse = (object)array(
 		"MockLoginResponse" => (object)array(
-			"Message" => "You have successfully logged in.",
-			"MethodStatus" => "0",
-			"UserName" => "Gongli"
+			"message" => "You have successfully logged in.",
+			"method_status" => "0",
+			"firstname" => "Gongli"
 		)
-	)
+	);
 
-
-
-
-echo json_encode(mockLoginResponse);
+echo json_encode($mockLoginResponse);
 ?>
