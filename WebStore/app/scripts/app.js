@@ -48,7 +48,7 @@ var app = angular.module('WebStoreApp', ['ngRoute', 'ngResource'])
 
       ;
   })
-  .run(function($rootScope, $window){
+  .run(function($rootScope, $timeout){
     $root = $rootScope;
 
     $rootScope.digest = function(){
@@ -65,11 +65,13 @@ var app = angular.module('WebStoreApp', ['ngRoute', 'ngResource'])
     })
 
     $rootScope.onAction = function(func){
-      $(window).on('click', function(){
-        func();
-        $rootScope.digest();
-        $(window).off('click');
-      });
+      $timeout(function(){
+        $(window).on('click', function(){
+          func();
+          $rootScope.$digest();
+          $(window).off('click');
+        });
+      }, 0);
     }
 
     $rootScope.Status = {

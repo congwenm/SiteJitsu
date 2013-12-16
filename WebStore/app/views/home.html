@@ -1,14 +1,68 @@
 <div id="home-wrapper">
 
-	<button ng-click="checkItems();">Click
-	</button>
+	<!-- <button ng-click="checkItems();">Click</button> -->
+	<div id="itemList">
+		<div class="item-banner" ng-repeat="item in items">
+			<div class="image-wrapper">
+				<img ng-src="./images/items/{{item.image}}"/>
+			</div>
+			<div class="description">
+				<div class="overlay">
+				</div>
+			</div>
+		</div>	
+	</div>
+	
 
 </div>
 
 <style type="text/css">
 	#home-wrapper{
-		/*background-color: #bbbbbb;*/
-		height: 100%;
-		width: 100%;
+		/*background-color: #eeeeee;*/
+		/*height: 100%;*/
+		/*width: 100%;*/
 	}
+
+	#itemList{
+		margin: 30px auto 0 auto;
+		width: 600px;
+	}
+
+
+	.item-banner{
+		background-color: #ffffff;
+		height: 150px;
+		margin: 5px auto 0 auto;
+		border: 3px solid #bbbbbb;
+		overflow: hidden;
+		position: relative;
+		display: block;
+	}
+	.item-banner:hover{
+		border: 3px solid #dd88dd;
+	}
+	.item-banner img{
+		height: 150px;
+		width: 360px;
+	}
+	.item-banner div.image-wrapper{
+		position: relative;
+		display: inline-block;
+		/*float: left;*/
+	}
+	.item-banner div.description{
+		position: relative;
+		display: inline-block;
+		width: 230px;
+		height: 150px;
+		/*float: left;*/
+	}
+	.overlay{
+		background-color: rgba(0,0,0,0.2);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+
 </style>

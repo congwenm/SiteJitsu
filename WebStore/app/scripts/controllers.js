@@ -11,12 +11,14 @@
 
 
 app.controller('HomeCtrl', function($scope, $rootScope, Product){
-	$rootScope.items = Product.query();
-	$scope.checkItems = function(){
-		console.log($rootScope.items);
+	$rootScope.items = mock.items;
+	$scope.getItems = function(){
+		console.log('items', $rootScope.items);
 	}
 
-
+	$scope.checkItems = function(){
+		$scope.getItems();
+	}
 })
 
 .controller('LoginCtrl', function($scope, $rootScope, LoginService){
@@ -26,30 +28,40 @@ app.controller('HomeCtrl', function($scope, $rootScope, Product){
 		$scope.loginForm.submitten = true;
 		// e.stopPropagation();
 		
-
 		$rootScope.onAction(function(){		
 			$scope.loginForm.submitten = false;	
 		})
-		$scope.loginForm.$valid = true;
-		
 
 		//login on valid form
+		$scope.loginForm.$valid = true;
+
 		if($scope.loginForm.$valid == true){
 			LoginService.get({
-				'user_email': $scope.loginForm.email.$viewValue,
+				// 'user_email': $scope.loginForm.email.$viewValue,
+				'username': $scope.loginForm.username.$viewValue,
 				'user_password': $scope.loginForm.password.$viewValue
 			}, function(response){
 				console.log('logged in??', response);
 				$rootScope.LoginResponse = response;
-				$rootScope.Status.Profile.firstname = response.MockLoginResponse.firstname;
-				$rootScope.Status.loggedIn = true;
+				if (response.LoginResponse.methodStatus == '0'){
+					$rootScope.Status.Profile.firstname = response.LoginResponse.LoginData.firstName;
+					$rootScope.Status.loggedIn = true;	
+				}
+				else{
+					$rootScope.Status.loggedIn = false;
+					$scope.loginMsg = "Please check your credentials";
+				}
+				
 			})// send in username and password
 		}
 		else{
 			//do not log in
-			greenlog('checking which input field has an error');
-			if ($scope.loginForm.email.$invalid){
-				$scope.loginMsg = "Please Check your email";
+			console.log('checking which input field has an error', $scope);
+			// if ($scope.loginForm.email.$invalid){
+			// 	$scope.loginMsg = "Please Check the email you've entered email";
+			// }
+			if($scope.loginForm.username.$invalid){
+				$scope.loginMsg = "Please check your username";
 			}
 			else if ($scope.loginForm.password.$invalid){
 				$scope.loginMsg = "Please Check your password";

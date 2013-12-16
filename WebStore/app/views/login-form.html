@@ -1,10 +1,11 @@
 <form novalidate name="loginForm" id="login-form">
-	<input name="email" placeholder ="email" ng-model="email" required ng-pattern="/^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/"/>
+	<!-- <input name="email" placeholder ="email" ng-model="email" required ng-pattern="/^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/"/> -->
+	<input name="username" placeholder = "username" ng-model="username" required/>
 	<input name="password" placeholder ="password" ng-model="password" required/>
 	<button type="submit" ng-click="login($event)">Login</button>
 	<button type="reset" ng-click="register()">Register</button>
 
-	<div tooltip ng-show="loginForm.$invalid && loginForm.submitten"><!-- ng-show if $invalid -->
+	<div tooltip ng-show="(loginForm.$invalid || Status.loggedIn) && loginForm.submitten"><!-- ng-show if $invalid -->
 		<span class="arrow"></span>
 		<span class="msg" ng-cloak>{{loginMsg}}</span>
 	</div>
