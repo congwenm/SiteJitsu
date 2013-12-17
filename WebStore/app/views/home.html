@@ -2,15 +2,28 @@
 
 	<!-- <button ng-click="checkItems();">Click</button> -->
 	<div id="itemList">
-		<div class="item-banner" ng-repeat="item in items">
-			<div class="image-wrapper">
-				<img ng-src="./images/items/{{item.image}}"/>
-			</div>
-			<div class="description">
-				<div class="overlay">
+		<div ng-repeat="item in items" class="item">
+
+			<div class="item-banner" hover-fadein=".itemName">
+				<div class="image-wrapper">
+					<img ng-src="./images/items/{{item.image}}"/>
 				</div>
+
+				<span class="price">{{item.price | currency}}</span>
+
+				<div class="itemName">{{item.name}}
+				</div>	
 			</div>
-		</div>	
+
+			<div class="item-options">
+				<div class="options">
+					<button ng-click="addToCart()">Add to Cart</button>
+				</div>
+
+			</div>
+			
+		</div>
+		
 	</div>
 	
 
@@ -27,16 +40,29 @@
 		margin: 30px auto 0 auto;
 		width: 600px;
 	}
-
-
+	.item{
+		margin: 10px auto 10px auto;
+	}
 	.item-banner{
+		margin: 15px;
 		background-color: #ffffff;
 		height: 150px;
-		margin: 5px auto 0 auto;
+		width: 360px;
 		border: 3px solid #bbbbbb;
 		overflow: hidden;
 		position: relative;
-		display: block;
+		display: inline-block;
+		float: left;
+	}
+	.item-options{
+		display: inline-block;
+		float: left;
+	}
+	.item-options .options{
+		margin: 40px 30px;
+	}
+	.item-options .options button{
+		padding: 10px 20px;
 	}
 	.item-banner:hover{
 		border: 3px solid #dd88dd;
@@ -50,12 +76,34 @@
 		display: inline-block;
 		/*float: left;*/
 	}
-	.item-banner div.description{
-		position: relative;
+
+	.price{
 		display: inline-block;
+		position: absolute;
+		right: 0px;
+		top: 0px;
+		background-color: dimgrey;
+		padding: 5px;
+		font-family: cursive;
+		color: pink;
+		border-radius: 5px;
+		font-size: larger;
+		font-weight: 600;
+	}
+	div.itemName{
+		display: inline-block;
+		background-color: black;
 		width: 230px;
-		height: 150px;
 		/*float: left;*/
+		position: absolute;
+		bottom: 0px;
+		height: 1.2em;
+		width: 100%;
+		color: white;
+		font-weight: 600;		
+		padding: 5px 10px;
+		opacity: 0;
+		-webkit-transition: all 0.3s ease-in-out;
 	}
 	.overlay{
 		background-color: rgba(0,0,0,0.2);

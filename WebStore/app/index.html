@@ -25,6 +25,26 @@
         <h1>Fei's Beauty Shop</h1>
       </div>
 
+      <div id="control-panel">
+        <div class="cart">
+        </div>
+      </div>
+
+      <style type="text/css">
+        #control-panel{
+          position: absolute;
+          left: 280px;
+          top: 30px;
+        }
+        #control-panel .cart{
+          background-image: url(images/icon/shopping_cart.png);
+          position: relative;
+          width: 50px;
+          background-size: 50px;
+          height: 50px;
+        }
+      </style>
+
       <div ng-controller="LoginCtrl" id ="login-banner">
         <div ng-clean="views/login-form.html" login-ui ng-show="!Status.loggedIn" ></div>
         <div ng-clean="views/loggedInHeader.html" id="loggedIn-banner" ng-show="Status.loggedIn"></div>

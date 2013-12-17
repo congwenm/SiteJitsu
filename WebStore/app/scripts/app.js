@@ -66,6 +66,7 @@ var app = angular.module('WebStoreApp', ['ngRoute', 'ngResource'])
 
     $rootScope.onAction = function(func){
       $timeout(function(){
+        greenlog('on action');
         $(window).on('click', function(){
           func();
           $rootScope.$digest();

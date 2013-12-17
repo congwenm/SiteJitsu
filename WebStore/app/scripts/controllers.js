@@ -25,12 +25,13 @@ app.controller('HomeCtrl', function($scope, $rootScope, Product){
 	
 	$scope.login = function(e){
 		console.log($scope);
-		$scope.loginForm.submitten = true;
+		
 		// e.stopPropagation();
 		
 		$rootScope.onAction(function(){		
 			$scope.loginForm.submitten = false;	
 		})
+		$scope.loginForm.submitten = true;
 
 		//login on valid form
 		$scope.loginForm.$valid = true;
