@@ -1,8 +1,7 @@
 describe('mysite application', function(){
-	var mockLocation,
-			rootScope,
-			timeout,
-			route;
+	var mockLocation, rootScope, timeout, route,
+		httpBackend
+	;
 	beforeEach(function(){
 		module('mySite');
 		inject(function($injector){
@@ -10,7 +9,11 @@ describe('mysite application', function(){
 			rootScope = $injector.get('$rootScope');
 			route = $injector.get('$route');
 			timeout = $injector.get('$timeout');
+			httpBackend	 = $injector.get('$httpBackend');
 		})
+
+		httpBackend.when('GET', './partials/contact.html')
+		.respond('<div>Contact Mock Page</div>')
 	})
 
 	it('should be initialized', function(){
@@ -31,12 +34,9 @@ describe('mysite application', function(){
 	describe('location ', function(){
 		it('should change active page', function(){
 			expect(rootScope.activePage).toBe('HOME');
-
-			/*rootScope.$apply(function(){
-				mockLocation.path('/contact');	
-			}).then(function(){
-				expect(rootScope.activePage).toBe('CONTACT')
-			});*/
+			mockLocation.path('/contact');	
+			rootScope.$digest();
+			expect(rootScope.activePage).toBe('CONTACT')
 			// console.log(mockLocation.path())	
 		})
 	})

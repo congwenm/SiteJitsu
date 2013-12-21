@@ -21,35 +21,43 @@
 
 
     <div id="header">
-      <div id="banner">
-        <h1>Fei's Beauty Shop</h1>
+      <div style="margin: 0 auto; max-width: 700px;">
+        <div id="banner">
+          <h1>Fei's Beauty Shop</h1>
+        </div>
+
+        <div ng-controller="LoginCtrl" id ="login-banner">
+          <div ng-clean="views/login-form.html" login-ui ng-show="!Status.loggedIn" ></div>
+          <div ng-clean="views/loggedInHeader.html" id="loggedIn-banner" ng-show="Status.loggedIn"></div>
+        </div>
       </div>
 
-
-      <div id ="login-banner" login-ui ng-if="!Status.LoggedIn" ng-controller="LoginCtrl">
-        <form novalidate name="loginForm" id="login-form">
-          <input name="email" placeholder ="email" ng-model="email" required ng-pattern="/^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/"/>
-          <input name="password" placeholder ="password" ng-model="password" required/>
-          <button type="submit" ng-click="login($event)">Login</button>
-          <button type="reset" ng-click="register()">Register</button>
-
-          <div tooltip ng-show="loginForm.$invalid && loginForm.submitten"><!-- ng-show if $invalid -->
-            <span class="arrow"></span>
-            <span class="msg" ng-cloak>{{loginMsg}}</span>
-          </div>
-        </form>
+      <div id="control-panel">
+        <div class="cart">
+        </div>
       </div>
 
-      <div id="loggedIn-banner" ng-if="Status.LoggedIn">
+      <style type="text/css">
+        #control-panel{
+          position: absolute;
+          left: 280px;
+          top: 30px;
+        }
+        #control-panel .cart{
+          background-image: url(images/icon/shopping_cart.png);
+          position: relative;
+          width: 50px;
+          background-size: 50px;
+          height: 50px;
+        }
+      </style>
 
-        
-      </div>
 
 
     </div>
 
 
-    <div class="container" ng-view=""></div>
+    <div class="container" ng-view></div>
 
      <script>
        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -88,6 +96,7 @@
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script type="text/javascript" src="json/items.js"></script>
         <script src="scripts/app.js"></script>
         <script type="text/javascript" src="scripts/services.js"></script>
         <script src="scripts/controllers.js"></script>

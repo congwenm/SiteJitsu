@@ -36,7 +36,7 @@ body{
 }
 
 [tooltip]{
-	position: relative;
+	position: absolute;
 	border: 1px solid black;
 	z-index: 100;
 	background-color: #E2D5C1;
@@ -65,4 +65,10 @@ body{
 [tooltip] .msg{
 	display: inline-block;
 	margin: 7px;
+}
+
+.container{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
 }

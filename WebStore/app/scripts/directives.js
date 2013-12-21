@@ -1,4 +1,5 @@
-app.directive('login-ui', function(){
+app
+.directive('loginUi', function(){
 	return {
 		restrict: 'A',
 		compile: function(sc,el,at){
@@ -14,5 +15,42 @@ app.directive('login-ui', function(){
 			}
 		},
 		// controller: 'LoginCtrl'
+	}
+})
+
+.directive('ngClean', function($http, $compile){
+	return {
+		restrict: 'A',
+		compile: function(sc,el,at){
+			return {
+				post: function(sc,el,at,ct){
+					$http.get(at.ngClean || '')
+					.success(function(html){
+						el.append($compile(html)(sc))
+					})
+				}
+			}
+		}
+	}
+})
+
+.directive('hoverFadein', function(){
+	return {
+		restrict: 'A',
+		compile: function(sc,el,at){
+			return {
+				post: function(sc,el,at,ct){
+					var element = el.find(at.hoverFadein);
+					console.log(element);
+					el.on('mouseenter', function(){
+						element.css('opacity', '0.85');
+					})
+
+					el.on('mouseleave', function(){
+						element.css('opacity', '0');
+					})
+				}
+			}
+		}
 	}
 })
