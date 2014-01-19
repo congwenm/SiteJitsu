@@ -18,7 +18,7 @@
   this.ut = ut;
 
   //angularize
-  this.$root = undefined;
+  this.root = undefined;
 }).call(window)
 
 
@@ -27,7 +27,7 @@
 /** App
  */
 var app = angular.module('WebStoreApp', ['ngRoute', 'ngResource'])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $httpProvider) {
     $routeProvider
       .when('/main', {
         templateUrl: 'views/main.html',
@@ -45,11 +45,12 @@ var app = angular.module('WebStoreApp', ['ngRoute', 'ngResource'])
       .otherwise({
         redirectTo: '/'
       })
-
       ;
+
+      $httpProvider.defaults.headers.common = "application/json";
   })
   .run(function($rootScope, $timeout){
-    $root = $rootScope;
+    root = $rootScope;
 
     $rootScope.digest = function(){
       if(this.$$phase == null){
@@ -60,7 +61,7 @@ var app = angular.module('WebStoreApp', ['ngRoute', 'ngResource'])
       //   redlog('current phase', this.$$phase);
       // }
     }
-    $root.$watch('$$phase', function(phase){
+    root.$watch('$$phase', function(phase){
       greenlog('phase change: ' + phase)
     })
 

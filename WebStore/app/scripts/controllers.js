@@ -42,10 +42,12 @@ app.controller('HomeCtrl', function($scope, $rootScope, Product){
 				'username': $scope.loginForm.username.$viewValue,
 				'user_password': $scope.loginForm.password.$viewValue
 			}, function(response){
+				// response = response.join();
 				console.log('logged in??', response);
-				$rootScope.LoginResponse = response;
-				if (response.LoginResponse.methodStatus == '0'){
-					$rootScope.Status.Profile.firstname = response.LoginResponse.LoginData.firstName;
+
+				$rootScope.LoginResponse = response.data.LoginResponse;
+				if ($rootScope.LoginResponse.methodStatus == '0'){
+					$rootScope.Status.Profile.firstname = $rootScope.LoginResponse.LoginData.firstName;
 					$rootScope.Status.loggedIn = true;	
 				}
 				else{
